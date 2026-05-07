@@ -1,0 +1,33 @@
+#conteiner{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header header header "
+    " . t_a  t_a " 
+    ". História . ."
+    "valores . .s"
+    ;
+    min-height: 100vh;
+}
+
+#Cabeçalho{
+    grid-area: header;
+    background-color: green;
+    grid-column:  ;
+    
+    
+}
+
+#titulo_abertura{
+    grid-area: t_a;
+    background-color: red;
+}
+
+#História{
+    grid-area: História;
+}
+
+#valores{
+
+}
