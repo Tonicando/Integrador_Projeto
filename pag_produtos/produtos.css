@@ -266,16 +266,15 @@ nav a{
 
     flex-direction: column;
 
-    min-width: 220px;
+    justify-content: space-between;
 
     border: 1px solid black;
 
     border-radius: 15px;
 
-    gap: 25px;
-    
     overflow: hidden;
 
+    padding-bottom: 20px;
 }
 
 .produto img{
@@ -308,18 +307,15 @@ nav a{
 
 
 .preco{
-    background: linear-gradient(
-    to bottom,
-    #ff6600,
-    #c36602,
-    #f4a213);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ff6b00;
 
-    font-size: 21px;
-    padding: 0 5px 20px;
+    font-size: 28px;
+    font-weight: bold;
 
+    position: relative;
+    top: 40px;
+
+    margin-left: 15px;
 }
 
 .destaque{
@@ -502,4 +498,17 @@ nav a{
         align-items: center;
     }
     .footer-col { width: 100%; }
+}
+
+.prdtbotao{
+    display: block;
+    background-color: #80e476;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 150px;
+   
 }
