@@ -24,7 +24,8 @@
     gap: 10px;
 
     color: #5b8558;
-    font-family: 'poppins', sans-serif;
+
+
 
 }
 
@@ -40,6 +41,9 @@
     align-items: center;
 
     justify-content: center;
+    
+    border-bottom: 1px solid #d9dfd4;
+
 
 }
 
@@ -117,7 +121,7 @@ nav a{
 
     cursor: pointer;
 
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     font-weight: 600;
 
@@ -133,6 +137,15 @@ nav a{
     display: block;
 
     cursor: pointer;
+}
+
+section{
+    grid-area: section;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -185,23 +198,10 @@ nav a{
 }
 
 .bloco_seleção h1{
-
-    .bloco_seleção{
-    grid-area: selecao;
-
-    width: 90%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 20px;
-
-    padding: 40px 0;
+    color: #3D5141;
+    
 }
-}
+
 
 
 .selecionar{
