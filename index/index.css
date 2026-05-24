@@ -1,18 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
-#conteiner{
+
+#container{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto 13fr auto auto auto auto auto;
+    grid-template-rows: repeat(6,auto);
     grid-template-areas:
     "header header header "
     " t_a t_a  t_a "
-    "Hist História História"
+    ". História História"
     "valores valores valores"
     "p_m p_m p_m"
     "s_c s_c s_c"
@@ -20,8 +24,7 @@
     min-height: 100vh;
     color: #5b8558;
     width: 100%;
-    font-family: 'poppins', sans-serif;
-    
+    gap: 10px;
  
 }
  
@@ -33,6 +36,8 @@
     justify-content: center;
     width: 100%;
     background-color: white;
+    border-bottom: 1px solid #d9dfd4;
+
 }
 
 nav {
@@ -78,7 +83,7 @@ nav a {
     color: black;
     text-decoration: none;
     cursor: pointer;
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 16px;
 }
@@ -182,7 +187,7 @@ nav a {
     display: flex;
     margin-top: 50px;
     flex-wrap: wrap;
-    margin-right: 4em;
+    margin-left: 170px;
     padding: 30px;
     border-radius: 16px;
     align-items: center;
@@ -221,6 +226,7 @@ nav a {
     margin-top: 10px;
     line-height: 30px;
     width: 420px;
+    
 
     
 }
@@ -578,4 +584,48 @@ nav a {
         align-items: center;
     }
     .footer-col { width: 100%; }
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.login-link:hover{
+    color: #F39430;
+}
+
+.header-direita{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.carrinho img{
+    width: 22px;
+    margin-left: -200px;
+}
+#userBtn{
+    margin-left: 15px;
 }
