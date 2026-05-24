@@ -24,7 +24,8 @@
     gap: 10px;
 
     color: #5b8558;
-    font-family: 'poppins', sans-serif;
+
+
 
 }
 
@@ -40,6 +41,9 @@
     align-items: center;
 
     justify-content: center;
+    
+    border-bottom: 1px solid #d9dfd4;
+
 
 }
 
@@ -117,7 +121,7 @@ nav a{
 
     cursor: pointer;
 
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     font-weight: 600;
 
@@ -133,6 +137,15 @@ nav a{
     display: block;
 
     cursor: pointer;
+}
+
+section{
+    grid-area: section;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -185,23 +198,10 @@ nav a{
 }
 
 .bloco_seleção h1{
-
-    .bloco_seleção{
-    grid-area: selecao;
-
-    width: 90%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 20px;
-
-    padding: 40px 0;
+    color: #3D5141;
+    
 }
-}
+
 
 
 .selecionar{
@@ -263,20 +263,19 @@ nav a{
 .produto{
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
     border: 1px solid black;
-
     border-radius: 15px;
-
     overflow: hidden;
-
     padding-bottom: 20px;
+    transition: 0.3s;
 }
 
+.produto:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 .produto img{
 
     width: 100%;
@@ -299,22 +298,19 @@ nav a{
 }
 
 .produto p{
-    color: #2b4d2a;
-    width: 100%;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    padding: 0 20px;
+    min-height: 90px;
 }
 
 
 .preco{
     color: #ff6b00;
-
     font-size: 28px;
     font-weight: bold;
-
     position: relative;
     top: 40px;
-
     margin-left: 15px;
 }
 
@@ -499,10 +495,12 @@ nav a{
     }
     .footer-col { width: 100%; }
 }
-
-.prdtbotao{
+ a{
+    text-decoration: none;
+ }
+ .prdtbotao{
     display: block;
-    background-color: #80e476;
+    background-color: #4984e9;
     color: white;
     border: none;
     border-radius: 20px;
@@ -510,5 +508,63 @@ nav a{
     height: 40px;
     cursor: pointer;
     margin-left: 150px;
-   
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.prdtbotao:hover{
+
+    background-color: #5cdc50;
+    transform: scale(1.05);
+}
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.login-link:hover{
+    color: #F39430;
+}
+
+.header-direita{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.carrinho img{
+    width: 22px;
+    margin-left: -200px;
+}
+#userBtn{
+    margin-left: 15px;
 }
