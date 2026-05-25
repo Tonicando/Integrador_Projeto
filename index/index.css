@@ -124,12 +124,6 @@ nav a {
     grid-area: t_a;
     background-image: url(../Imagens/fundo_imagem.png);
 
-    @media (max-width:300px){
-        background-image:  url(../Imagens/imagem_fundo300px.png)
-    }
-    @media (max-width:600px){
-        background-image: url(../Imagens/Imagem_fundo600px.png);
-    }
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -584,4 +578,152 @@ nav a {
         align-items: center;
     }
     .footer-col { width: 100%; }
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.login-link:hover{
+    color: #F39430;
+}
+
+.header-direita{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.carrinho img{
+    width: 22px;
+    margin-left: -200px;
+}
+#userBtn{
+    margin-left: 15px;
+}
+
+
+@media (max-width:756px){
+    
+    #container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    #Cabeçalho{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    #logo{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+    }
+
+    #logo_img{
+        width: 30%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .logo_texto{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo_texto h3{
+        font-size: 15px;
+    }
+
+    .logo_texto p{
+        font-size: 15px;
+
+    }
+
+    .links{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a{
+        color: #000;
+        text-decoration: none;
+        font-family: 'Poppins',sans-serif;
+        font-size: 13px;
+
+
+    }
+
+    .carrinho img {
+        width: 55%;
+        height: auto;
+        display: block;
+
+    }
+
+    .VerPrdt{
+        font-size: 10px;
+        margin: 5%;
+        height: 5%;
+        width: 30%;
+
+    }
+
+    #titulo_abertura{
+        @media (max-width:600px){
+        background-image: url(../Imagens/Imagem_fundo600px.png);
+
+        background-size: cover;
+        width: 100%;
+        background-position: center;
+        }
+        
+        
+
+
+    }
+
+
+
+
+
 }
