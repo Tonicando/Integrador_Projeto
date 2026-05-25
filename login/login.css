@@ -1,0 +1,154 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #14532d, #1f7a3d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    height: 88vh;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.left{
+    width: 45%;
+    background: linear-gradient(180deg, #39a24a, #21753a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.left img{
+    width: 110px;
+    margin-bottom: 20px;
+}
+
+.left h1{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.left p{
+    font-size: 17px;
+    line-height: 28px;
+}
+
+.right{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 50px;
+}
+
+.right h2{
+    font-size: 45px;
+    color: #14532d;
+}
+
+.right span{
+    color: #777;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #1b4332;
+}
+
+form input{
+    height: 50px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 0 15px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+form input:focus{
+    border-color: #ff9800;
+}
+
+button{
+    height: 52px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 12px;
+    background: #ff9800;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: #e68900;
+    transform: scale(1.02);
+}
+
+@media(max-width: 900px){
+
+    body{
+        height: auto;
+        padding: 20px 0;
+        overflow-y: auto;
+    }
+
+    .container{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .left h1{
+        font-size: 38px;
+    }
+
+    .left p{
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .right{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .right h2{
+        font-size: 35px;
+    }
+}
