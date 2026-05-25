@@ -365,3 +365,47 @@ section{
     }
     .footer-col { width: 100%; }
 }
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.login-link:hover{
+    color: #F39430;
+}
+
+.header-direita{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.carrinho img{
+    width: 22px;
+    margin-left: -200px;
+}
+#userBtn{
+    margin-left: 15px;
+}

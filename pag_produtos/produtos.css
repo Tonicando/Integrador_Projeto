@@ -263,21 +263,19 @@ section{
 .produto{
 
     display: flex;
-
     flex-direction: column;
-
-    min-width: 220px;
-
+    justify-content: space-between;
     border: 1px solid black;
-
     border-radius: 15px;
-
-    gap: 25px;
-    
     overflow: hidden;
-
+    padding-bottom: 20px;
+    transition: 0.3s;
 }
 
+.produto:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 .produto img{
 
     width: 100%;
@@ -300,26 +298,20 @@ section{
 }
 
 .produto p{
-    color: #2b4d2a;
-    width: 100%;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    padding: 0 20px;
+    min-height: 90px;
 }
 
 
 .preco{
-    background: linear-gradient(
-    to bottom,
-    #ff6600,
-    #c36602,
-    #f4a213);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    font-size: 21px;
-    padding: 0 5px 20px;
-
+    color: #ff6b00;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    top: 40px;
+    margin-left: 15px;
 }
 
 .destaque{
@@ -502,4 +494,77 @@ section{
         align-items: center;
     }
     .footer-col { width: 100%; }
+}
+ a{
+    text-decoration: none;
+ }
+ .prdtbotao{
+    display: block;
+    background-color: #4984e9;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 150px;
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.prdtbotao:hover{
+
+    background-color: #5cdc50;
+    transform: scale(1.05);
+}
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.login-link:hover{
+    color: #F39430;
+}
+
+.header-direita{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+}
+
+.carrinho img{
+    width: 22px;
+    margin-left: -200px;
+}
+#userBtn{
+    margin-left: 15px;
 }
