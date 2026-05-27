@@ -23,6 +23,7 @@
     color: #5b8558;
     width: 100%;
     gap: 10px;
+ 
 }
  
 #Cabeçalho {
@@ -34,6 +35,7 @@
     width: 100%;
     background-color: white;
     border-bottom: 1px solid #d9dfd4;
+
 }
 
 nav {
@@ -573,7 +575,7 @@ nav a {
     width: 100%;
 }
 
-/* Ajuste Responsivo Tablet */
+
 @media (max-width: 900px) {
     #rodape footer {
         flex-direction: column;

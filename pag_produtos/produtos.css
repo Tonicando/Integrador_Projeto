@@ -127,6 +127,7 @@ nav a {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .carrinho img {
@@ -479,7 +480,7 @@ section{
     width: 100%;
 }
 
-/* Ajuste Responsivo */
+
 @media (max-width: 900px) {
     #rodape footer {
         flex-direction: column;
