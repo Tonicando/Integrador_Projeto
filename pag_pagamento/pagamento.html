@@ -3,15 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrinho — Sabor da Terra</title>
+    <link rel="stylesheet" href="pagamento.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    AAAAAAAAAAAAAAAAAAAAA SÓ AGORA QUE CHEGAMOS AQUI?
-    <video controls autoplay muted loop width="700">
-        <source src="video.mp4" type="video/mp4">
-        
-    </video>
+
+<!-- HEADER -->
+<header id="cabecalho">
+    <nav>
+        <div id="logo">
+            <img id="logo_img" src="../imagens/logo_folha.png" alt="Logo">
+            <div class="logo_texto">
+                <h3><span>Sabor da Terra</span></h3>
+                <p>Orgânicos e Artesanais</p>
+            </div>
+        </div>
+        <div class="links">
+            <a href="../index/index.html">Início</a>
+            <a href="../pag_produtos/produtos.html">Produtos</a>
+            <a href="../pag_contato/contato.html">Contato</a>
+        </div>
+        <div class="header-direita">
+            <div class="carrinho-icon">
+                <img src="../Imagens/Carrinho_compras.png" alt="Carrinho">
+                <span id="badge-count">0</span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <div class="breadcrumb-inner">
+        <span class="step active" id="step-carrinho">🛒 Carrinho</span>
+        <span class="sep">›</span>
+        <span class="step" id="step-dados">📋 Dados</span>
+        <span class="sep">›</span>
+        <span class="step" id="step-finalizar">✅ Finalizar</span>
+    </div>
+</div>
+
+<main>
+
+    <!-- ===== ETAPA 1: CARRINHO ===== -->
+    <section id="etapa-carrinho" class="etapa ativa">
+        <div class="layout-split">
+
+            <!-- Lista de itens -->
+            <div class="coluna-esquerda">
+                <h2 class="secao-titulo">Seu Carrinho</h2>
+
+                <div id="lista-itens">
+                    <!-- itens gerados via JS -->
+                </div>
+
+                <!-- Carrinho vazio -->
+                <div id="carrinho-vazio" class="carrinho-vazio" style="display:none;">
+                    <div class="vazio-icone">🛒</div>
+                    <h3>Seu carrinho está vazio</h3>
+                    <p>Adicione produtos para continuar</p>
+                    <a href="../pag_produtos/produtos.html" class="btn-voltar-produtos">Ver Produtos</a>
+                </div>
+
+                <a href="../pag_produtos/produtos.html" class="link-continuar">← Continuar comprando</a>
+            </div>
+
+            <!-- Resumo -->
+            <div class="coluna-direita">
+                <div class="resumo-card">
+                    <h3 class="resumo-titulo">Resumo do Pedido</h3>
+
+                    <div class="resumo-linha">
+                        <span>Subtotal</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-linha">
+                        <span>Frete</span>
+                        <span class="frete-gratis">Grátis 🎉</span>
+                    </div>
+                    <div class="resumo-linha total-linha">
+                        <span>Total</span>
+                        <span id="total-final">R$ 0,00</span>
+                    </div>
+
+                    <div class="cupom-area">
+                        <input type="text" placeholder="Cupom de desconto" id="cupom-input">
+                        <button class="btn-cupom">Aplicar</button>
+                    </div>
+
+                    <button class="btn-prosseguir" id="btn-ir-dados" onclick="irParaDados()">
+                        Prosseguir para Dados →
+                    </button>
+
+                    <div class="selos">
+                        <span>🔒 Compra segura</span>
+                        <span>🌱 Produto orgânico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- ===== ETAPA 2: DADOS ===== -->
+    <section id="etapa-dados" class="etapa">
+        <div class="layout-split">
+            <div class="coluna-esquerda">
+                <h2 class="secao-titulo">Seus Dados</h2>
+
+                <div class="form-card">
+                    <div class="form-grupo">
+                        <label>Nome completo *</label>
+                        <input type="text" id="nome" placeholder="João da Silva" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label>E-mail *</label>
+                            <input type="email" id="email" placeholder="joao@email.com" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label>Telefone *</label>
+                            <input type="tel" id="telefone" placeholder="(34) 99999-9999" required>
+                        </div>
+                    </div>
+
+                    <hr class="divisor">
+                    <h4 class="sub-titulo">Endereço de entrega</h4>
+
+                    <div class="form-row">
+                        <div class="form-grupo flex-2">
+                            <label>Rua / Avenida *</label>
+                            <input type="text" id="rua" placeholder="Rua das Flores" required>
+                        </div>
+                        <div class="form-grupo flex-1">
+                            <label>Número *</label>
+                            <input type="text" id="numero" placeholder="123" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label>Complemento</label>
+                            <input type="text" id="complemento" placeholder="Apto 42, Bloco B...">
+                        </div>
+                        <div class="form-grupo">
+                            <label>Bairro *</label>
+                            <input type="text" id="bairro" placeholder="Centro" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label>Cidade *</label>
+                            <input type="text" id="cidade" placeholder="Uberlândia" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label>Estado *</label>
+                            <select id="estado" required>
+                                <option value="">Selecione</option>
+                                <option>MG</option><option>SP</option><option>RJ</option>
+                                <option>GO</option><option>DF</option><option>PR</option>
+                                <option>RS</option><option>SC</option><option>BA</option>
+                                <option>PE</option><option>CE</option><option>AM</option>
+                                <option>PA</option><option>MT</option><option>MS</option>
+                                <option>ES</option><option>RN</option><option>PB</option>
+                                <option>AL</option><option>SE</option><option>PI</option>
+                                <option>MA</option><option>TO</option><option>RO</option>
+                                <option>AC</option><option>AP</option><option>RR</option>
+                            </select>
+                        </div>
+                        <div class="form-grupo">
+                            <label>CEP *</label>
+                            <input type="text" id="cep" placeholder="38400-000" required>
+                        </div>
+                    </div>
+
+                    <hr class="divisor">
+                    <h4 class="sub-titulo">Forma de pagamento</h4>
+
+                    <div class="pagamento-opcoes">
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="pagamento" value="pix" checked>
+                            <span class="opcao-label">
+                                <span class="opcao-icone">💠</span>
+                                <span>PIX</span>
+                            </span>
+                        </label>
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="pagamento" value="cartao">
+                            <span class="opcao-label">
+                                <span class="opcao-icone">💳</span>
+                                <span>Cartão de Crédito</span>
+                            </span>
+                        </label>
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="pagamento" value="boleto">
+                            <span class="opcao-label">
+                                <span class="opcao-icone">📄</span>
+                                <span>Boleto</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Campos cartão (aparece só quando cartão selecionado) -->
+                    <div id="campos-cartao" class="campos-cartao" style="display:none;">
+                        <div class="form-grupo">
+                            <label>Número do cartão</label>
+                            <input type="text" id="num-cartao" placeholder="0000 0000 0000 0000" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-grupo">
+                                <label>Nome no cartão</label>
+                                <input type="text" id="nome-cartao" placeholder="JOÃO DA SILVA">
+                            </div>
+                            <div class="form-grupo flex-1">
+                                <label>Validade</label>
+                                <input type="text" id="validade" placeholder="MM/AA" maxlength="5">
+                            </div>
+                            <div class="form-grupo flex-1">
+                                <label>CVV</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="botoes-navegacao">
+                    <button class="btn-voltar" onclick="voltarParaCarrinho()">← Voltar ao carrinho</button>
+                    <button class="btn-prosseguir" onclick="finalizarPedido()">Finalizar Pedido ✓</button>
+                </div>
+            </div>
+
+            <!-- Mini-resumo lateral -->
+            <div class="coluna-direita">
+                <div class="resumo-card">
+                    <h3 class="resumo-titulo">Resumo</h3>
+                    <div id="resumo-itens-mini"></div>
+                    <div class="resumo-linha total-linha" style="margin-top:15px;">
+                        <span>Total</span>
+                        <span id="total-dados">R$ 0,00</span>
+                    </div>
+                    <div class="selos" style="margin-top:20px;">
+                        <span>🔒 Dados protegidos</span>
+                        <span>🚚 Entrega rápida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- RODAPÉ -->
+<div id="rodape">
+    <footer>
+        <section class="footer-col">
+            <div class="footer-logo-align">
+                <img src="../Imagens/icone_logo.png" class="icone-logo-principal">
+                <h2>Sabor da Terra</h2>
+            </div>
+            <p>Produtos orgânicos e artesanais direto do campo para sua mesa.</p>
+        </section>
+        <section class="footer-col">
+            <h3>Navegação</h3>
+            <nav class="footer-nav-list">
+                <a href="../index/index.html">Início</a>
+                <a href="../pag_produtos/produtos.html">Produtos</a>
+                <a href="../pag_contato/contato.html">Contato</a>
+            </nav>
+        </section>
+        <section class="footer-col">
+            <h3>Contato</h3>
+            <div class="contato-item">
+                <img src="../Imagens/icone_telefone.png" class="icone">
+                <span>(34) 99176-7274</span>
+            </div>
+            <div class="contato-item">
+                <img src="../pag_contato/icones_contanto/instagrambege.png" class="icone">
+                <span>@sabordaterra</span>
+            </div>
+        </section>
+    </footer>
+    <div class="copyright">© 2026 Sabor da Terra — Todos os direitos reservados</div>
+</div>
+
+<script>
+// ==========================================
+// DADOS DOS PRODUTOS
+// ==========================================
+const catalogoProdutos = {
+    "ABACAXI":          { preco: 7.99,  img: "../Frutas/prdt_abacaxi.png" },
+    "BANANA":           { preco: 3.99,  img: "../Frutas/prdt_banana.png" },
+    "LARANJA":          { preco: 2.99,  img: "../Frutas/prdt_laranja.jpg" },
+    "LIMAO":            { preco: 2.99,  img: "../Frutas/prdt_limão.jpg" },
+    "MAMÃO":            { preco: 30.99, img: "../Frutas/prdt_mamão.png" },
+    "MAÇÃ":             { preco: 10.99, img: "../Frutas/prdt_maça.png" },
+    "MELANCIA":         { preco: 20.00, img: "../Frutas/prdt_melancia.png" },
+    "MORANGO":          { preco: 30.99, img: "../Frutas/prdt_morango.jpg" },
+    "UVA":              { preco: 2.99,  img: "../Frutas/prdt_uva.png" },
+    "ABOBRINHA VERDE":  { preco: 2.99,  img: "../Verduras/prdt_abobrinha verde.png" },
+    "ABOBORA":          { preco: 15.99, img: "../Verduras/prdt_abóbora.png" },
+    "BETERRABA":        { preco: 2.99,  img: "../Verduras/prdt_beterraba.png" },
+    "BROCOLIS":         { preco: 2.99,  img: "../Verduras/prdt_brocolis.png" },
+    "CEBOLA":           { preco: 4.99,  img: "../Verduras/prdt_cebola.png" },
+    "CEBOLINHA":        { preco: 12.99, img: "../Verduras/prdt_cebolinha.png" },
+    "CENOURA":          { preco: 1.99,  img: "../Verduras/prdt_cenoura.png" },
+    "MANDIOCA":         { preco: 2.99,  img: "../Verduras/prdt_mandioca.png" },
+    "PIMENTÃO VERDE":   { preco: 2.99,  img: "../Verduras/prdt_pimentão verde.png" },
+    "PIMENTÃO VERMELHO":{ preco: 5.99,  img: "../Verduras/prdt_pimentão vermelho.png" },
+    "QUEIJO ARTESANAL (1kg)":   { preco: 49.99, img: "../Laticinio/Queijo Artesanal.png" },
+    "REQUEIJÃO DE CORTE (500g)":{ preco: 14.99, img: "../Laticinio/prdt_requeijão_corte.png" },
+    "LEITE (1L)":               { preco: 6.99,  img: "../Laticinio/prdt_leite_integral.png" },
+    "IOGURTE NATURAL (1L)":     { preco: 8.99,  img: "../Laticinio/prdt_iorgute_natural.png" },
+    "DOCE DE LEITE CASEIRO (500g)": { preco: 12.99, img: "../Laticinio/prdt_docedelite_caseiro.png" },
+    "BOLO DE LEITE (1kg)":      { preco: 19.99, img: "../Laticinio/prdt_bolodeleite.png" },
+    "MANTEIGA ARTESANAL (500g)":{ preco: 12.99, img: "../Laticinio/Manteiga Artesanal.png" },
+    "PÃO INTEGRAL (500g)":  { preco: 9.99,  img: "../Padaria/prdt_pãointegral.png" },
+    "PÃO DE QUEIJO":        { preco: 14.99, img: "../Padaria/prdt_pãode_queijo.png" },
+    "ROSCA DOCE":           { preco: 9.99,  img: "../Padaria/prdt_roscadoce.png" },
+    "SONHO":                { preco: 9.99,  img: "../Padaria/prdt_sonho_padaria.png" },
+    "BOLO DE FUBA":         { preco: 12.99, img: "../Padaria/prdt_bolodefubá.png" },
+    "BROA DE FUBA":         { preco: 10.99, img: "../Padaria/prdt_broa_fubá.png" },
+    "GELEIA DE MORANGO (300g)":              { preco: 14.99, img: "../Geleias/prdt_geleiademorango.png" },
+    "GELEIA DE FRUTAS VERMELHAS (300g)":     { preco: 14.99, img: "../Geleias/prdt_geleiadefrutasvermelhas.png" },
+    "GELEIA DE MORANGO COM TAMARINEIRA E CHIA (300g)": { preco: 14.99, img: "../Geleias/prdt_geleiademorangocomtamaraechia.png" },
+    "GELEIA DE FIGO (300g)": { preco: 14.99, img: "../Geleias/prdt_geliadefigo.png" },
+    "DESTAQUE DO MÊS":       { preco: 42.90, img: "../Imagens/queijo_e_geleia.png" },
+};
+
+// ==========================================
+// CARRINHO (localStorage)
+// ==========================================
+function getCarrinho() {
+    return JSON.parse(localStorage.getItem('carrinho_sabordaterra') || '[]');
+}
+function salvarCarrinho(c) {
+    localStorage.setItem('carrinho_sabordaterra', JSON.stringify(c));
+}
+
+// Adicionar item vindo da URL
+const params = new URLSearchParams(window.location.search);
+const produtoParam = params.get('produto');
+if (produtoParam) {
+    const nome = decodeURIComponent(produtoParam);
+    const carrinho = getCarrinho();
+    const idx = carrinho.findIndex(i => i.nome === nome);
+    if (idx >= 0) {
+        carrinho[idx].qtd++;
+    } else {
+        const dados = catalogoProdutos[nome];
+        if (dados) carrinho.push({ nome, preco: dados.preco, img: dados.img, qtd: 1 });
+    }
+    salvarCarrinho(carrinho);
+    // Limpar URL para não re-adicionar no refresh
+    window.history.replaceState({}, '', window.location.pathname);
+}
+
+// ==========================================
+// RENDERIZAR CARRINHO
+// ==========================================
+function renderCarrinho() {
+    const carrinho = getCarrinho();
+    const lista = document.getElementById('lista-itens');
+    const vazio = document.getElementById('carrinho-vazio');
+    const badge = document.getElementById('badge-count');
+
+    const totalQtd = carrinho.reduce((s,i) => s + i.qtd, 0);
+    badge.textContent = totalQtd;
+    badge.style.display = totalQtd > 0 ? 'flex' : 'none';
+
+    if (carrinho.length === 0) {
+        lista.innerHTML = '';
+        vazio.style.display = 'flex';
+        atualizarTotais(0);
+        return;
+    }
+
+    vazio.style.display = 'none';
+    lista.innerHTML = carrinho.map((item, idx) => `
+        <div class="item-carrinho" id="item-${idx}">
+            <img src="${item.img}" alt="${item.nome}" class="item-img" onerror="this.src='../Imagens/logo_folha.png'">
+            <div class="item-info">
+                <span class="item-nome">${item.nome}</span>
+                <span class="item-preco-unit">R$ ${item.preco.toFixed(2).replace('.',',')}</span>
+            </div>
+            <div class="item-controles">
+                <button class="btn-qtd" onclick="alterarQtd(${idx}, -1)">−</button>
+                <span class="item-qtd">${item.qtd}</span>
+                <button class="btn-qtd" onclick="alterarQtd(${idx}, 1)">+</button>
+            </div>
+            <span class="item-subtotal">R$ ${(item.preco * item.qtd).toFixed(2).replace('.',',')}</span>
+            <button class="btn-remover" onclick="removerItem(${idx})" title="Remover">✕</button>
+        </div>
+    `).join('');
+
+    const total = carrinho.reduce((s,i) => s + i.preco * i.qtd, 0);
+    atualizarTotais(total);
+    renderMiniResumo(carrinho, total);
+}
+
+function atualizarTotais(total) {
+    const fmt = 'R$ ' + total.toFixed(2).replace('.',',');
+    document.getElementById('subtotal').textContent = fmt;
+    document.getElementById('total-final').textContent = fmt;
+    if (document.getElementById('total-dados'))
+        document.getElementById('total-dados').textContent = fmt;
+}
+
+function renderMiniResumo(carrinho, total) {
+    const el = document.getElementById('resumo-itens-mini');
+    if (!el) return;
+    el.innerHTML = carrinho.map(i => `
+        <div class="resumo-linha">
+            <span>${i.nome} ×${i.qtd}</span>
+            <span>R$ ${(i.preco * i.qtd).toFixed(2).replace('.',',')}</span>
+        </div>
+    `).join('');
+    document.getElementById('total-dados').textContent = 'R$ ' + total.toFixed(2).replace('.',',');
+}
+
+function alterarQtd(idx, delta) {
+    const carrinho = getCarrinho();
+    carrinho[idx].qtd = Math.max(1, carrinho[idx].qtd + delta);
+    salvarCarrinho(carrinho);
+    renderCarrinho();
+}
+
+function removerItem(idx) {
+    const carrinho = getCarrinho();
+    carrinho.splice(idx, 1);
+    salvarCarrinho(carrinho);
+    renderCarrinho();
+}
+
+// ==========================================
+// NAVEGAÇÃO ENTRE ETAPAS
+// ==========================================
+function irParaDados() {
+    const carrinho = getCarrinho();
+    if (carrinho.length === 0) {
+        alert('Adicione pelo menos um produto ao carrinho!');
+        return;
+    }
+    document.getElementById('etapa-carrinho').classList.remove('ativa');
+    document.getElementById('etapa-dados').classList.add('ativa');
+    document.getElementById('step-carrinho').classList.remove('active');
+    document.getElementById('step-dados').classList.add('active');
+    renderMiniResumo(carrinho, carrinho.reduce((s,i) => s + i.preco * i.qtd, 0));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function voltarParaCarrinho() {
+    document.getElementById('etapa-dados').classList.remove('ativa');
+    document.getElementById('etapa-carrinho').classList.add('ativa');
+    document.getElementById('step-dados').classList.remove('active');
+    document.getElementById('step-carrinho').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function finalizarPedido() {
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const rua = document.getElementById('rua').value.trim();
+    const numero = document.getElementById('numero').value.trim();
+    const bairro = document.getElementById('bairro').value.trim();
+    const cidade = document.getElementById('cidade').value.trim();
+    const estado = document.getElementById('estado').value;
+    const cep = document.getElementById('cep').value.trim();
+
+    if (!nome || !email || !telefone || !rua || !numero || !bairro || !cidade || !estado || !cep) {
+        alert('Por favor, preencha todos os campos obrigatórios (*).');
+        return;
+    }
+
+    // Limpar carrinho
+    salvarCarrinho([]);
+
+    // Redirecionar para página de finalizado
+    window.location.href = '../pag_pagamento/finalizado.html';
+}
+
+// ==========================================
+// PAGAMENTO — mostrar campos do cartão
+// ==========================================
+document.addEventListener('change', function(e) {
+    if (e.target.name === 'pagamento') {
+        const campos = document.getElementById('campos-cartao');
+        campos.style.display = e.target.value === 'cartao' ? 'block' : 'none';
+    }
+});
+
+// Máscara cartão
+document.addEventListener('input', function(e) {
+    if (e.target.id === 'num-cartao') {
+        e.target.value = e.target.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim().slice(0,19);
+    }
+    if (e.target.id === 'validade') {
+        e.target.value = e.target.value.replace(/\D/g,'').replace(/^(\d{2})(\d)/,'$1/$2').slice(0,5);
+    }
+    if (e.target.id === 'cep') {
+        e.target.value = e.target.value.replace(/\D/g,'').replace(/^(\d{5})(\d)/,'$1-$2').slice(0,9);
+    }
+    if (e.target.id === 'telefone') {
+        e.target.value = e.target.value.replace(/\D/g,'').replace(/^(\d{2})(\d)/,'($1) $2').replace(/(\d{5})(\d)/,'$1-$2').slice(0,15);
+    }
+});
+
+// Init
+renderCarrinho();
+</script>
 </body>
 </html>

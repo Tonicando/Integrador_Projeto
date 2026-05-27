@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head> 
-    <script src="index.js" defer></script>
-    <link rel="stylesheet" href="index.css">
-    <link  rel = "icon" href="favicon.ico"  type="image/x-icon">
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexFlow</title>
-</head> 
+    <title>Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
 <body>
-    <form method="get">
-        <input type="name" id="user_name" name="user_name" placeholder="Digite seu nome">
-        <input type ="email" id="user_email" name="user_email" placeholder="Digite seu email">
 
-    </form>
+    <main class="container">
 
-    <form method="post">
-        <input type="number" id = "senha" name="senha" required placeholder="Digite sua senha">
-    </form>
+        <section class="left">
 
+            <img src="../Imagens/logo_folha.png" alt="Logo">
 
-    
+            <h1>Sabor da Terra</h1>
 
-    
+            <p>
+                Produtos orgânicos e artesanais direto do campo para sua mesa.
+            </p>
+
+        </section>
+
+        <section class="right">
+
+            <h2>Criar Conta</h2>
+
+            <span>Cadastre-se para continuar</span>
+            <form>
+
+                <label>Nome</label>
+                <input type="text" placeholder="Digite seu nome">
+
+                <label>Email</label>
+                <input type="email" placeholder="Digite seu email">
+
+                <label>Senha</label>
+                <input type="password" placeholder="Digite sua senha">
+
+                <label>Confirmar senha</label>
+                <input type="password" placeholder="Confirme sua senha">
+
+                <button type="submit">Criar Conta</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
 </body>
 </html>
