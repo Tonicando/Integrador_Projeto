@@ -125,16 +125,112 @@ nav a{
     font-size: 16px;
 }
 
-.carrinho img{
+#Cabeçalho {
+    grid-area: header;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #d9dfd4;
+}
 
-    width: 22px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
 
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#logo_img {
+    width: 45px;
     height: auto;
+    object-fit: contain;
+}
 
+.logo_texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo_texto h3{
+    background:linear-gradient(to bottom, #ff6600, #f3830c, #FBB944);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo_texto p{
+    color: #3e5d3d;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.header-direita{
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover{
+    color: #F39430;
+}
+
+.carrinho-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho img {
+    width: 24px;
+    height: auto;
     display: block;
-
     cursor: pointer;
 }
+
 
 section{
     grid-area: section;
@@ -366,46 +462,119 @@ section{
     .footer-col { width: 100%; }
 }
 
-.usuario-area{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+
+@media (max-width: 600px) {
+
+    html,body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    #Cabeçalho{
+        height: auto;
+        padding: 15px 0;
+        
+
+    }
+
+   
+    nav{
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;}
+
+    #logo{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+
+    }
+
+    #logo_img{
+        width: 50px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .logo_texto{
+        width: 100%;
+        display: flex;
+    }
+
+    .logo_texto h3{
+        font-size: 15px;
+    }
+
+    .logo_texto p{
+        font-size: 15px;
+
+    }
+
+    .links{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a{
+        color: #000;
+        text-decoration: none;
+        font-family: 'Poppins',sans-serif;
+        font-size: 13px;
+
+
+    }
+
+    .header-direita{
+        display: flex;
+        gap: 12px;
+        align-items:center ;
+    }
+
+    .carrinho{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 10px;
+    }
+
+    .carrinho img {
+        width: 22;
+        height: auto;
+        margin-left: 30px;
+        display: block;        
+    }
+
+    .Textinho{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Textinho p{
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .meios{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+
+    }
+
+
+
+
+
+
+
+
 }
 
-.login-link{
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: #415140;
-}
 
-.login-link:hover{
-    color: #F39430;
-}
 
-.header-direita{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.usuario-area{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-}
-
-.login-link{
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: #415140;
-}
-
-.carrinho img{
-    width: 22px;
-    margin-left: -200px;
-}
-#userBtn{
-    margin-left: 15px;
-}
