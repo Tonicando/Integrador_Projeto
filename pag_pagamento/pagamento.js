@@ -90,3 +90,4 @@ const redirecionamento = document.getElementById("finalizarCompra");
             "../pedido-finalizado/pedido-finalizado.html";
         })
     }
+
