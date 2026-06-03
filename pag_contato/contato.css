@@ -16,7 +16,8 @@
 
     grid-template-areas:
     "header header header"
-    "section section section";
+    "section section section"
+    "roda roda roda";
 
     width: 100%;
 
@@ -232,7 +233,7 @@ nav a {
 }
 
 
-section{
+.text{
     grid-area: section;
     gap: 20px;
     display: flex;
@@ -334,8 +335,7 @@ section{
     font-size: 14px;
 }
 
-
-#rodape { 
+#rodape{
     grid-area: roda; 
     background: #415140;
     color: white;
@@ -344,7 +344,7 @@ section{
     margin-top: 100px;
 }
 
-#rodape footer { 
+#rodape footer{
     display: flex; 
     justify-content: space-between; 
     align-items: flex-start;
@@ -353,16 +353,15 @@ section{
     padding-bottom: 40px;
 }
 
-.footer-col { 
-    width: 30%; 
+.footer-col{
+    width: 30%;
 }
-
 
 .footer-col:nth-child(2) {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /
+    align-items: center; 
 }
 
 
@@ -373,34 +372,34 @@ section{
 }
 
 
-.footer-logo-align {
+.footer-logo-align{
     display: flex;
     align-items: center;
     gap: 15px;
+
     margin-bottom: 20px;
 }
 
-.icone-logo-principal {
+.icone-logo-principal{
     width: 40px;
     height: auto;
 }
 
-.footer-col h2 {
+.footer-col h2{
     margin-bottom: 0;
     color: white;
     font-family: 'Cinzel Decorative', serif; 
     font-size: 24px;
 }
 
-
-.footer-col h3 { 
+.footer-col h3{
     margin-bottom: 20px;
     font-size: 20px;
     background: linear-gradient(to bottom, #ff6600, #f3830c, #FBB944);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'League Spartan', sans-serif;
 }
 
 .footer-nav-list {
@@ -431,7 +430,6 @@ section{
     gap: 12px;
     margin-bottom: 15px;
 }
-
 .icone { 
     width: 22px;
     height: 22px;
@@ -448,133 +446,29 @@ section{
     width: 100%;
 }
 
-/* Ajuste Responsivo */
-@media (max-width: 900px) {
-    #rodape footer {
+
+@media (max-width: 900px){
+
+    #rodape footer{
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 40px;
     }
-    .footer-logo-align, .contato-item, .footer-nav-list {
+
+    .footer-col{
+        width: 100%;
+    }
+
+    .footer-logo-align{
         justify-content: center;
+    }
+
+    .footer-nav-list{
         align-items: center;
     }
-    .footer-col { width: 100%; }
+
+    .contato-item{
+        justify-content: center;
+    }
 }
-
-
-@media (max-width: 600px) {
-
-    html,body{
-        width: 100%;
-        overflow-x: hidden;
-    }
-    #Cabeçalho{
-        height: auto;
-        padding: 15px 0;
-        
-
-    }
-
-   
-    nav{
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        align-items: center;}
-
-    #logo{
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-
-    }
-
-    #logo_img{
-        width: 50px;
-        height: auto;
-        object-fit: contain;
-    }
-
-    .logo_texto{
-        width: 100%;
-        display: flex;
-    }
-
-    .logo_texto h3{
-        font-size: 15px;
-    }
-
-    .logo_texto p{
-        font-size: 15px;
-
-    }
-
-    .links{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    nav a{
-        color: #000;
-        text-decoration: none;
-        font-family: 'Poppins',sans-serif;
-        font-size: 13px;
-
-
-    }
-
-    .header-direita{
-        display: flex;
-        gap: 12px;
-        align-items:center ;
-    }
-
-    .carrinho{
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        height: 10px;
-    }
-
-    .carrinho img {
-        width: 22;
-        height: auto;
-        margin-left: 30px;
-        display: block;        
-    }
-
-    .Textinho{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .Textinho p{
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    .meios{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        flex-wrap: wrap;
-
-    }
-
-
-
-
-
-
-
-
-}
-
-
-

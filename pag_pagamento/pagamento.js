@@ -87,7 +87,8 @@ const redirecionamento = document.getElementById("finalizarCompra");
     if(redirecionamento){
         redirecionamento.addEventListener('click',() =>{
          window.location.href =
-            "../pedido-finalizado/pedido-finalizado.html";
+            "registro.html";
+            
         })
     }
 
