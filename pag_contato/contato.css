@@ -472,3 +472,108 @@ nav a {
         justify-content: center;
     }
 }
+
+@media (max-width: 600px) {
+
+    html,body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    #Cabeçalho{
+        height: auto;
+        padding: 15px 0;
+        
+
+    }
+
+   
+    nav{
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;}
+
+    #logo{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+
+    }
+
+    #logo_img{
+        width: 50px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .logo_texto{
+        width: 100%;
+        display: flex;
+    }
+
+    .logo_texto h3{
+        font-size: 15px;
+    }
+
+    .logo_texto p{
+        font-size: 15px;
+
+    }
+
+    .links{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a{
+        color: #000;
+        text-decoration: none;
+        font-family: 'Poppins',sans-serif;
+        font-size: 13px;
+
+
+    }
+
+    .header-direita{
+        display: flex;
+        gap: 12px;
+        align-items:center ;
+    }
+
+    .carrinho{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 10px;
+    }
+
+    .carrinho img {
+        width: 22;
+        height: auto;
+        margin-left: 30px;
+        display: block;        
+    }
+
+    .Textinho{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Textinho p{
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .meios{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+
+    }
+}
