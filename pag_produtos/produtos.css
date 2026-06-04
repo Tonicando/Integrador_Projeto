@@ -251,16 +251,17 @@ nav a {
     padding: 20px;
 }
 
-.produto{
-
+.produto {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid black;
+    align-items: center;
+    border: 1px solid #3e5d3d;
     border-radius: 15px;
     overflow: hidden;
     padding-bottom: 20px;
     transition: 0.3s;
+    text-align: center;
 }
 
 .produto:hover{
@@ -296,13 +297,17 @@ nav a {
 }
 
 
-.preco{
+.preco {
     color: #ff6b00;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
-    position: relative;
-    top: 40px;
-    margin-left: 15px;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
 }
 
 .destaque{
@@ -354,6 +359,11 @@ nav a {
     gap: 20px;
 
     justify-content: center;
+}
+.unidade-medida {
+    font-size: 14px;
+    color: #707070;
+    font-weight: 500;
 }
 
 .transparente{
@@ -500,23 +510,21 @@ nav a {
  a{
     text-decoration: none;
  }
- .prdtbotao{
+.prdtbotao {
     display: block;
     background-color: #4984e9;
     color: white;
     border: none;
     border-radius: 20px;
-    width: 140px;
+    width: 150px;
     height: 40px;
     cursor: pointer;
-    margin-left: 150px;
+    margin: 0 auto;
     position: relative;
-
     transition: 0.3s;
 }
 
-.prdtbotao:hover{
-
+.prdtbotao:hover {
     background-color: #5cdc50;
     transform: scale(1.05);
 }

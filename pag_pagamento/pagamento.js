@@ -1,94 +1,101 @@
-console.log("Script de pagamento carregado");
+document.addEventListener("DOMContentLoaded", () => {
+    renderizarCarrinho();
+});
 
-let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+function renderizarCarrinho() {
+    const listaCarrinho = document.getElementById("listaprodutos");
+    const totalElemento = document.getElementById("total");
+    
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    
+    if (!listaCarrinho) return;
+    
+    listaCarrinho.innerHTML = "";
+    let valorTotal = 0;
 
-const ListaCarrinho = document.getElementById('listaprodutos');
-const total = document.getElementById('total');
+    if (carrinho.length === 0) {
+        listaCarrinho.innerHTML = "<p class='carrinho-vazio'>Seu carrinho está vazio.</p>";
+        if (totalElemento) totalElemento.innerText = "R$ 0,00";
+        return;
+    }
 
-let valor = 0;
+    carrinho.forEach((produto, index) => {
+        const subtotal = produto.preco * produto.quantidade;
+        valorTotal += subtotal;
 
-if(ListaCarrinho){
-
-    ListaCarrinho.innerHTML = '';
-
-    carrinho.forEach(produto => {
-
-        let conta = Number(produto.quantidade * produto.preco);
-
-        valor += conta;
-
-        ListaCarrinho.innerHTML += `
-        
-        <div class="item">
-
-            <img src="${produto.img}" alt="${produto.nome}">
-            <div class="item_qtd">
-                ${produto.quantidade}
+        listaCarrinho.innerHTML += `
+            <div class="item">
+                <img src="${produto.img}" alt="${produto.nome}">
+                <div class="infodoproduto">
+                    <h3>${produto.nome}</h3>
+                    <span>R$ ${produto.preco.toFixed(2)}</span>
+                </div>
+                <div class="controle-quantidade">
+                    <button class="btn-qtd" onclick="alterarQuantidade(${index}, -1)">-</button>
+                    <span class="item_qtd">${produto.quantidade}</span>
+                    <button class="btn-qtd" onclick="alterarQuantidade(${index}, 1)">+</button>
+                </div>
+                <div class="item-total">
+                    R$ ${subtotal.toFixed(2)}
+                </div>
+                <button class="btn-remover" onclick="removerProduto(${index})">×</button>
             </div>
-
-            <div class="infodoproduto">
-                <h3>${produto.nome}</h3>
-
-                <span>
-                    R$ ${conta.toFixed(2)}
-                </span>
-            </div>
-
-
-            <button class="deletar"
-            data-nome="${produto.nome}">
-                X
-            </button>
-
-        </div>
         `;
     });
 
-    total.textContent = `Total: R$ ${valor.toFixed(2)}`;
+    if (totalElemento) {
+        totalElemento.innerText = `R$ ${valorTotal.toFixed(2)}`;
+    }
+}
 
-    const deletar = document.querySelectorAll('.deletar');
+function alterarQuantidade(index, mudanca) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    
+    carrinho[index].quantidade += mudanca;
 
-    deletar.forEach(del => {
+    if (carrinho[index].quantidade <= 0) {
+        carrinho.splice(index, 1);
+    }
 
-        del.addEventListener('click', () => {
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    renderizarCarrinho();
+}
 
-            const delnome = del.dataset.nome;
+function removerProduto(index) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    carrinho.splice(index, 1);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    renderizarCarrinho();
+}
+const deletar = document.querySelectorAll('.deletar');
 
-            carrinho = carrinho.filter(
-                produto => produto.nome !== delnome
-            );
+deletar.forEach(del => {
 
-            localStorage.setItem(
-                'carrinho',
-                JSON.stringify(carrinho)
-            );
+    del.addEventListener('click', () => {
 
-            location.reload();
+        const delnome = del.dataset.nome;
 
-        });
+        carrinho = carrinho.filter(
+            produto => produto.nome !== delnome
+        );
+
+        localStorage.setItem(
+            'carrinho',
+            JSON.stringify(carrinho)
+        );
+
+        location.reload();
 
     });
 
-    const deletatudo = document.getElementById('limpar_tudo');
-    
-    if(deletatudo){
-        deletatudo.addEventListener('click', () =>{
-            carrinho = [];
-            localStorage.setItem('carrinho', JSON.stringify(carrinho));
-            location.reload()
-        })
-    }
+});
 
+const deletatudo = document.getElementById('limpar_tudo');
 
+if(deletatudo){
+    deletatudo.addEventListener('click', () =>{
+        carrinho = [];
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        location.reload()
+    })
 }
-
-const redirecionamento = document.getElementById("finalizarCompra");
-
-    if(redirecionamento){
-        redirecionamento.addEventListener('click',() =>{
-         window.location.href =
-            "registro.html";
-            
-        })
-    }
-

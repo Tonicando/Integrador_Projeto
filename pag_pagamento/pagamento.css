@@ -262,26 +262,81 @@ aside button:hover{
 }
 
 
-.item_qtd{
-    color: black;
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 15px;
 }
 
-.item{
+.controle-quantidade {
     display: flex;
-
     align-items: center;
+    gap: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    padding: 2px 8px;
+    background-color: #ffffff;
+}
 
-    justify-content: space-between;
+.btn-qtd {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4984e9;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
 
-    background-color: white;
+.btn-qtd:hover {
+    color: #5cdc50;
+    transform: scale(1.2);
+}
 
-    border-radius: 15px;
+.item_qtd {
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+    color: #333333;
+}
 
-    padding: 20px;
+.item-total {
+    font-weight: bold;
+    color: #ff6b00;
+    min-width: 80px;
+    text-align: right;
+}
 
-    margin-bottom: 20px;
+.btn-remover {
+    background:none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0 5px;
+    
+}
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.btn-remover:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+.carrinho-vazio {
+    text-align: center;
+    color: #707070;
+    font-size: 16px;
+    padding: 40px 0;
 }
 
 .item img{
@@ -383,7 +438,7 @@ aside button:hover{
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Cinzel Decorative', serif;
 }
 
 .footer-nav-list {
