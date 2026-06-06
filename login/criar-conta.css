@@ -175,3 +175,10 @@ button:hover{
         font-size: 35px;
     }
 }
+
+.erro {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 18px;
+}

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
-    
-    <script src="index.js"></script>
+    <script src="usuario.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabor da Terra</title>
 </head>
@@ -32,9 +31,13 @@
                         <div class="usuario">
                             <img src="../login/icone_usuario.png" width="30px" alt="Usuário">
                         </div>
-                        <span class="login-link">
-                            Entre ou cadastre-se
-                        </span>
+                            <span class="login-link" id="textoUsuario">
+                                Entre ou cadastre-se
+                            </span>
+
+                            <span class="sair-link" id="btnSair" style="display: none;">
+                                🚪 Sair
+                            </span>
                     </a>
 
                     <a href="../pag_pagamento/pagamento.html" class="carrinho-link">

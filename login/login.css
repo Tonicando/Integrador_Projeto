@@ -68,3 +68,10 @@ button{
     text-decoration:none;
     font-weight:bold;
 }
+
+.erro {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    min-height: 18px;
+}

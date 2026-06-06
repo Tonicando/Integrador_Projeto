@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entrar</title>
 <link rel="stylesheet" href="login.css">
+<script src="login.js" ></script>
 </head>
 <body>
 
@@ -21,11 +22,11 @@
 
         <label>Senha</label>
         <input type="password" id="senha" placeholder="Digite sua senha" required>
-            <a href="../index/index.html">
-                <button type="button"  class="btn-criar">
-                    Entrar
-                </button>
-            </a>
+            <button type="submit" class="btn-criar">
+                Entrar
+            </button>
+
+            <p id="erroLogin" class="erro"></p>
     </form>
 
     <div class="links">
