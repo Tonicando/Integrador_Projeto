@@ -604,4 +604,190 @@ nav a {
     .contato-item{
         justify-content: center;
     }
+
+}
+@media (max-width:600px){
+    html,body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    #Cabeçalho{
+        height: auto;
+        padding: 15px 0;
+    }
+
+    nav{
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    #logo{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    #logo_img{
+        width: 50px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .logo_texto{
+        width: 100%;
+        display: flex;
+    }
+
+    .logo_texto h3{
+        font-size: 15px;
+    }
+
+    .logo_texto p{
+        font-size: 15px;
+    }
+
+    .links{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a{
+        color: #000;
+        text-decoration: none;
+        font-family: 'Poppins',sans-serif;
+        font-size: 13px;
+    }
+
+
+    .header-direita{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        gap: 25px; 
+        margin-top: 5px;
+    }
+
+    .carrinho{
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carrinho img {
+        width: 24px;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .VerPrdt, .Faleconosco {
+        text-decoration: none;
+        width: 100%;       
+        max-width: 280px;  
+        margin: 8px auto; 
+        display: block;    
+        text-align: center;
+        font-size: 16px;
+    }
+
+    #titulo_abertura{
+        min-height: 60vh;
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        text-align: center;
+        padding-left: 20px; 
+    }
+
+    #organicos_text{
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        text-align: center;
+        width: 100%;
+    }
+
+    #organicos_text2 h1{
+        font-size: 2rem;
+        line-height: 40px;
+    }
+
+    #organicos_text2 span{
+        font-size: 2rem;
+    }
+
+    #organicos_text2 p{
+        font-size: 1rem;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    #organicos_text2 a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    #História{
+        display: flex;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .p1,.p2,.p3{   
+        color: #415140;
+        margin-top: 10px;
+        line-height: 30px;
+        width: 100%;
+    }
+
+    #História aside{
+        padding-top: 30px;        
+    }
+
+    #valores{
+        display: flex;
+        flex-direction: column;
+        margin:0;
+        gap: 3px;
+        width: 100%;
+    }
+
+    .item_A, .item_C, .item_B{
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    #produto_mensal{
+        width: 95%;
+        max-width: 365px;
+        flex-direction: column;
+    }
+
+    #Informacoes_mensais{
+        padding: 15px;
+    }
+    
+    .paragrafo_mensal {
+        width: 100%;
+    }
+
+    .container_produtos{
+        flex-direction: column;
+    }
 }
