@@ -5,197 +5,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="registro.css">
+    <link rel="icon" type="image/x-icon" href="../Imagens/favicon.ico?v=1">
     <script src="registro.js"></script>
-
     <title>Registro</title>
 </head>
 
 <body>
-
     <header id="Cabeçalho">
 
             <nav>
 
                 <div id="logo">
+                    <img id="logo_img"src="../Imagens/logo_folha.png"alt="Logo do site">
+                        <div class="logo_texto">
+                            <h3>
+                                <span>Sabor da Terra</span>
+                            </h3>
 
-                    <img id="logo_img"
-                    src="../imagens/logo_folha.png"
-                    alt="Logo do site">
+                            <p>Orgânicos e Artesanais</p>
+                        </div>
 
-                    <div class="logo_texto">
-
-                        <h3>
-                            <span>Sabor da Terra</span>
-                        </h3>
-
-                        <p>Orgânicos e Artesanais</p>
-
+                </div>
+                    <div class="links">
+                        <a href="../index/index.html">Inicio</a>
+                        <a href="../pag_produtos/produtos.html">Produtos</a>
+                        <a href="../pag_contato/contato.html">Contato</a>
                     </div>
-
-                </div>
-
-                <div class="links">
-                    <a href="../index/index.html">Inicio</a>
-                    <a href="../pag_produtos/produtos.html">Produtos</a>
-                    <a href="../pag_contato/contato.html">Contato</a>
-                </div>
-
                         <div class="header-direita">
-
                             <a href="../login/login.html" class="usuario-area" id="userBtn">
-
                                 <div class="usuario">
                                     <img src="../login/icone_usuario.png"width="30px"alt="Usuário">
                                 </div>
-
                                 <span class="login-link" id="textoUsuario">
-                                    Entre ou cadastre-se
+                                        Entre ou cadastre-se
                                 </span>
 
                                 <span class="sair-link" id="btnSair" style="display: none;">
-                                    🚪 Sair
+                                        🚪 Sair
                                 </span>
 
                             </a>
-
                             <a href="../pag_pagamento/pagamento.html" class="carrinho-link">
-
                                 <div class="carrinho">
-                                    <img src="../Imagens/Carrinho_compras.png"
-                                        alt="Carrinho">
+                                    <img src="../Imagens/Carrinho_compras.png"alt="Carrinho">
                                 </div>
-
                             </a>
+                        </div>
             </nav>
     </header>
 
-        
+            
         <main id="registro">
-
             <section class="registro-box">
-
                 <a href="../pag_produtos/produtos.html" class="continuar">
-                    ← Continuar Comprando
+                     ← Continuar Comprando
                 </a>
-
                 <h1>Finalizar Pedido</h1>
-
                 <p class="subtitulo">
                     Preencha seus dados para enviarmos seu pedido.
                 </p>
+                <form id = "formPedido">
+                        <label>Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Seu nome completo" required>
 
-                <form action="../pag_pagamento/pedido-finalizado.html">
+                        <label>Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
 
-                    <label>Nome Completo</label>
-                    <input type="text" placeholder="Seu nome completo" required>
+                        <label>Rua</label>
+                        <input type="text" id="rua" placeholder="Nome da rua" required>
 
-                    <label>Telefone / WhatsApp</label>
-                    <input type="tel" placeholder="(11) 99999-9999" required>
+                        <label>Número</label>
+                        <input type="text" id="numero" placeholder="Número da residência" required>
 
-                    <label>Rua</label>
-                    <input type="text" placeholder="Nome da rua" required>
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" placeholder="Bairro" required>
 
-                    <label>Número</label>
-                    <input type="text" placeholder="Número da residência" required>
+                        <label>Cidade</label>
+                        <input type="text" id="cidade" placeholder="Cidade" required>
 
-                    <label>Bairro</label>
-                    <input type="text" placeholder="Bairro" required>
+                        <label>CEP</label>
+                        <input type="text" id="cep" placeholder="00000-000" required>
 
-                    <label>Cidade</label>
-                    <input type="text" placeholder="Cidade" required>
+                        <label>Forma de Pagamento</label>
 
-                    <label>CEP</label>
-                    <input type="text" placeholder="00000-000" required>
+                        <select id="pagamento" required>
+                            <option value="">Selecione</option>
+                            <option value="pix">Pix</option>
+                            <option value="credito">Cartão de Crédito</option>
+                            <option value="debito">Cartão de Débito</option>
+                        </select>
 
-                    <label>Forma de Pagamento</label>
+                        <label>Observações</label>
 
-                    <select id="pagamento" required>
+                        <textarea id="observacao"placeholder="Alguma observação sobre o pedido?"></textarea>
 
-                        <option value="">Selecione</option>
-                        <option value="pix">Pix</option>
-                        <option value="credito">Cartão de Crédito</option>
-                        <option value="debito">Cartão de Débito</option>
-                        <option value="dinheiro">Dinheiro</option>
-
-                    </select>
-
-                    <label>Observações</label>
-
-                    <textarea placeholder="Alguma observação sobre o pedido?"></textarea>
-
-                    <button type="submit" class="btn-enviar">
-                        Enviar Pedido
-                    </button>
+                        <button type="submit" class="btn-enviar">
+                            Enviar Pedido
+                        </button>
 
                 </form>
 
             </section>
 
         </main>
+            <div id="rodape">
+                <footer>
+                    <section class="footer-col">
+                        <div class="footer-logo-align">
+                            <img src="../Imagens/icone_logo.png" class="icone-logo-principal">
+                            <h2>Sabor da Terra</h2>
+                        </div>
 
-        <div id="rodape">
+                        <p>
+                            Produtos orgânicos e artesanais direto do campo para sua mesa.
+                            Qualidade, frescor e sabor em cada entrega.
+                        </p>
 
-            <footer>
+                    </section>
 
-                <section class="footer-col">
+                        <section class="footer-col">
 
-                    <div class="footer-logo-align">
+                            <h3>Navegação</h3>
 
-                        <img src="../Imagens/icone_logo.png" class="icone-logo-principal">
+                            <nav class="footer-nav-list">
+                                <a href="../index/index.html">Início</a>
+                                <a href="../pag_produtos/produtos.html">Produtos</a>
+                                <a href="../pag_contato/contato.html">Contato</a>
+                            </nav>
 
-                        <h2>Sabor da Terra</h2>
+                        </section>
 
+                        <section class="footer-col">
+
+                            <h3>Contato</h3>
+
+                            <div class="contato-item">
+                                <img src="../Imagens/icone_telefone.png" class="icone">
+                                <span>(34) 99176-7274</span>
+                            </div>
+
+                            <div class="contato-item">
+                                <img src="../pag_contato/icones_contanto/zap (10).png" class="icone">
+                                <span>(34) 99729-5330</span>
+                            </div>
+
+                            <div class="contato-item">
+                                <img src="../pag_contato/icones_contanto/instagrambege.png" class="icone">
+                                <span>@sabordaterra</span>
+                            </div>
+
+                        </section>
+
+                </footer>
+                    <div class="copyright">
+                        © 2026 Sabor da Terra — Todos os direitos reservados | Desenvolvido por NexFlow
                     </div>
 
-                    <p>
-                        Produtos orgânicos e artesanais direto do campo para sua mesa.
-                        Qualidade, frescor e sabor em cada entrega.
-                    </p>
-
-                </section>
-
-                    <section class="footer-col">
-
-                        <h3>Navegação</h3>
-
-                        <nav class="footer-nav-list">
-                            <a href="../index/index.html">Início</a>
-                            <a href="../pag_produtos/produtos.html">Produtos</a>
-                            <a href="../pag_contato/contato.html">Contato</a>
-                        </nav>
-
-                    </section>
-
-                    <section class="footer-col">
-
-                        <h3>Contato</h3>
-
-                        <div class="contato-item">
-                            <img src="../Imagens/icone_telefone.png" class="icone">
-                            <span>(34) 99176-7274</span>
-                        </div>
-
-                        <div class="contato-item">
-                            <img src="../pag_contato/icones_contanto/zap (10).png" class="icone">
-                            <span>(34) 99729-5330</span>
-                        </div>
-
-                        <div class="contato-item">
-                            <img src="../pag_contato/icones_contanto/instagrambege.png" class="icone">
-                            <span>@sabordaterra</span>
-                        </div>
-
-                    </section>
-
-            </footer>
-                <div class="copyright">
-                    © 2026 Sabor da Terra — Todos os direitos reservados
-                </div>
-
-    </div>
-
-
-
+            </div>
 
 </body>
 </html>

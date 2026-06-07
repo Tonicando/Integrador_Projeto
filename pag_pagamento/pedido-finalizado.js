@@ -1,33 +1,103 @@
-let forma =
-    localStorage.getItem("pagamento");
+document.addEventListener("DOMContentLoaded", function () {
 
-let info =
-    document.getElementById("infoPagamento");
+    const info = document.getElementById("pagamentoInfo");
 
-if (forma === "pix") {
+    const pagamento = localStorage.getItem("pagamento");
+    const codigo = localStorage.getItem("codigoPedido");
+    const nome = localStorage.getItem("nome");
+    const telefone = localStorage.getItem("telefone");
 
-    info.innerHTML =
-        "<h3>Pagamento via PIX</h3><p>Código PIX: PIX123456789</p>";
+    if (!info) {
+        console.log("Div pagamentoInfo não encontrada");
+        return;
+    }
 
-}
+    if (pagamento === "pix") {
 
-else if (forma === "credito") {
+        info.innerHTML = `
+            <h2>Pagamento via PIX</h2>
 
-    info.innerHTML =
-        "<h3>Cartão de Crédito</h3><p>Código: CRD123456</p>";
+            <p><strong>Pedido:</strong> ${codigo}</p>
 
-}
+            <p><strong>Cliente:</strong> ${nome}</p>
 
-else if (forma === "debito") {
+            <p><strong>Telefone:</strong> ${telefone}</p>
 
-    info.innerHTML =
-        "<h3>Cartão de Débito</h3><p>Código: DEB123456</p>";
+            <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=SaborDaTerraPix"
+            alt="QR Code PIX">
 
-}
+            <p><strong>Chave PIX:</strong> (34) 99176-7274</p>
+        `;
+    }
 
-else if (forma === "dinheiro") {
+    else if (pagamento === "credito") {
 
-    info.innerHTML =
-        "<h3>Pagamento em Dinheiro</h3><p>Pagamento na entrega.</p>";
+        info.innerHTML = `
+            <h2>Pagamento via Cartão de Crédito</h2>
 
-}
+            <p><strong>Pedido:</strong> ${codigo}</p>
+
+            <p><strong>Cliente:</strong> ${nome}</p>
+
+            <p><strong>Telefone:</strong> ${telefone}</p>
+
+            <p>O pagamento será realizado na entrega.</p>
+        `;
+    }
+
+    else if (pagamento === "debito") {
+
+        info.innerHTML = `
+            <h2>Pagamento via Cartão de Débito</h2>
+
+            <p><strong>Pedido:</strong> ${codigo}</p>
+
+            <p><strong>Cliente:</strong> ${nome}</p>
+
+            <p><strong>Telefone:</strong> ${telefone}</p>
+
+            <p>O pagamento será realizado na entrega.</p>
+        `;
+    }
+
+    else {
+
+        info.innerHTML = `
+            <h2>Erro</h2>
+
+            <p>Nenhuma forma de pagamento encontrada.</p>
+        `;
+    }
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    const textoUsuario = document.getElementById("textoUsuario");
+    const btnSair = document.getElementById("btnSair");
+
+    if (!textoUsuario || !btnSair) return;
+
+    if (usuarioLogado) {
+
+  textoUsuario.textContent = "Seja bem-vindo, " + usuarioLogado.nome;
+
+        btnSair.style.display = "block";
+
+        btnSair.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            localStorage.removeItem("usuarioLogado");
+
+            window.location.reload();
+
+        });
+
+    }
+
+});
