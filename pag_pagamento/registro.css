@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Cinzel+Decorative:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f6f2;
+}
+
+#container{
+    min-height: 100vh;
+}
+
+#Cabeçalho {
+    grid-area: header;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #d9dfd4;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Times New Roman', serif;
+}
+
+#logo_img {
+    width: 45px;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo_texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo_texto h3{
+    background:linear-gradient(to bottom, #ff6600, #f3830c, #FBB944);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo_texto p{
+    color: #3e5d3d;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.header-direita{
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.login-link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #415140;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover{
+    color: #F39430;
+}
+
+.carrinho-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho img {
+    width: 24px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+#registro{
+    display: flex;
+    justify-content: center;
+    padding: 90px 20px;
+}
+
+.registro-box{
+    width: 100%;
+    max-width: 700px;
+}
+
+.continuar{
+    text-decoration: none;
+    color: #5b8558;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.continuar:hover{
+    color: #e7853f;
+}
+
+.registro-box h1{
+    margin-top: 25px;
+    font-size: 54px;
+    color: #415140;
+}
+
+.subtitulo{
+    margin-top: 12px;
+    margin-bottom: 40px;
+    color: #5b8558;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
+    margin-bottom: 10px;
+    color: #415140;
+    font-weight: 500;
+}
+
+form input,
+form textarea{
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    background: white;
+}
+
+form textarea{
+    resize: none;
+    height: 120px;
+}
+form select{
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    background: white;
+}
+
+form select:focus{
+    border: 1px solid #e7853f;
+}
+form input:focus,
+form textarea:focus{
+    border: 1px solid #e7853f;
+}
+
+.btn-enviar{
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 200px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+.btn-enviar:hover{
+    background: #e68900;
+}
+
+
+
+#rodape{
+    grid-area: roda; 
+    background: #415140;
+    color: white;
+    padding: 60px 10% 30px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+#rodape footer{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 60px; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    padding-bottom: 40px;
+}
+
+.footer-col{
+    width: 30%;
+}
+
+.footer-col:nth-child(2) {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+.footer-col:nth-child(2) a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 10px; 
+}
+
+
+.footer-logo-align{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.icone-logo-principal{
+    width: 40px;
+    height: auto;
+}
+
+.footer-col h2{
+    margin-bottom: 0;
+    color: white;
+    font-family: 'Cinzel Decorative', serif; 
+    font-size: 24px;
+}
+
+.footer-col h3{
+    margin-bottom: 20px;
+    font-size: 20px;
+    background: linear-gradient(to bottom, #ff6600, #f3830c, #FBB944);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start; 
+}
+
+.footer-col p, 
+.footer-nav-list a,
+.contato-item span { 
+    color: #d9d9d9;
+    text-decoration: none;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.footer-nav-list a:hover {
+    color: #FBB944;
+}
+
+
+.contato-item { 
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.icone { 
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.copyright { 
+    text-align: center;
+    padding-top: 25px;
+    font-size: 14px;
+    color: #d8d8d8;
+    font-family: "Cinzel Decorative", serif;
+    width: 100%;
+}
+
+@media (max-width: 900px){
+
+    #rodape footer{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo-align,
+    .contato-item,
+    .footer-nav-list{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-col{
+        width: 100%;
+    }
+}
+
+@media (max-width:600px){
+
+    html,
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    #container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    #Cabeçalho{
+        height: auto;
+        padding: 15px 0;
+    }
+
+    nav{
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    #logo{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    #logo_img{
+        width: 50px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .logo_texto{
+        width: 100%;
+        display: flex;
+    }
+
+    .logo_texto h3{
+        font-size: 15px;
+    }
+
+    .logo_texto p{
+        font-size: 15px;
+    }
+
+    .links{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a{
+        color: #000;
+        text-decoration: none;
+        font-family: 'Poppins',sans-serif;
+        font-size: 13px;
+    }
+
+    .header-direita{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 25px;
+        margin-top: 5px;
+    }
+
+    .carrinho{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carrinho img{
+        width: 24px;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .registro-box h1{
+        font-size: 38px;
+    }
+
+    .subtitulo{
+        font-size: 14px;
+    }
+
+    form input,
+    form textarea{
+        padding: 15px;
+    }
+
+    .btn-enviar{
+        height: 55px;
+        font-size: 16px;
+    }
+}
+
+.sair-link{
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #F39430;
+    cursor: pointer;
+}
+
+.usuario-area{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+#textoUsuario{
+    display: flex;
+    align-items: center;
+}
